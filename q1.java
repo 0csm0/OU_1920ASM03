@@ -3,10 +3,8 @@ import java.awt.*;
 import java.awt.event.*;
 
 import javax.swing.*;
-import java.lang.*;
 
-
-class USD2GBP extends JFrame implements ActionListener{
+class USD2GBP extends JFrame implements ActionListener {
     private JMenuBar menuBar = new JMenuBar();
     private JMenu actionMenu = new JMenu("Action");
     private JMenuItem convertItem = new JMenuItem("Convert");
@@ -32,19 +30,17 @@ class USD2GBP extends JFrame implements ActionListener{
         this.setJMenuBar(menuBar);
         menuBar.add(actionMenu);
 
-        ActionListener convertlistener = new convertActionHandler();
         convertItem.addActionListener(this);
         exitItem.addActionListener(this);
 
         actionMenu.add(convertItem);
         actionMenu.add(exitItem);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+
         JPanel mainPanel = new JPanel();
-        mainPanel.setLayout(new FlowLayout());
+        mainPanel.setLayout(new GridLayout(0, 1, 0, 0));
         mainPanel.add(usdAmount);
         mainPanel.add(gbpAmount);
 
-        
         add(mainPanel, BorderLayout.WEST);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         pack();
@@ -52,11 +48,10 @@ class USD2GBP extends JFrame implements ActionListener{
 
 }
 
-
 public class Q1 {
     public static void main(String[] args) {
         USD2GBP main = new USD2GBP();
-        main.setSize(400,200);
+        main.setSize(400, 200);
         main.setVisible(true);
     }
 }
